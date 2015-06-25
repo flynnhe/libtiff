@@ -15,6 +15,10 @@ endforeach ( root )
 set ( ${rootlist} ${outlist} )
 endmacro ( )
 
+if ( WIN32 )
+  add_definitions ( /D _XKEYCHECK_H )
+endif ( )
+
 # generating config.h file:
 message ( "Configure: libtiff - generating tif_config.h:" )
 include ( CheckFunctionExists )
